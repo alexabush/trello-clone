@@ -5,7 +5,14 @@ class NewListBtn extends Component {
   render() {
     return (
       <div>
-        <p>Add a list...</p>
+        <form action="">
+          <input
+            type="text"
+            id="newListInput"
+            name="newListInput"
+            placeholder="Add a list..."
+          />
+        </form>
       </div>
     );
   }
