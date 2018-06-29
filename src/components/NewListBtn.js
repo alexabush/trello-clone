@@ -10,7 +10,7 @@ class NewListBtn extends Component {
             type="text"
             id="newListInput"
             name="newListInput"
-            placeholder="Add a list..."
+            placeholder="Add a card..."
           />
         </form>
       </div>
