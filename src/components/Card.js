@@ -18,6 +18,7 @@ class Card extends Component {
     event.preventDefault();
     console.log('current state: ', this.state);
     console.log('A name was submitted: ' + this.state.value);
+    //need way of having each card be responsible for its own state.
     debugger;
   };
 
@@ -47,15 +48,17 @@ class Card extends Component {
             onChange={this.handleChange}
           />
         </form>
-        <button type="submit" form="newListItemForm" className="addCard">
-          Add Card
-        </button>
-        <Icon
-          iconType={faWindowClose}
-          iconClass="icon"
-          hasBackground="true"
-          onClick={this.toggleShowNewItemForm}
-        />
+        <div className="new-list-item-form-button-wrapper">
+          <button type="submit" form="newListItemForm" className="addCard">
+            Add Card
+          </button>
+          <Icon
+            iconType={faWindowClose}
+            iconClass="icon"
+            onClick={this.toggleShowNewItemForm}
+            size="3x"
+          />
+        </div>
       </div>
     );
   };

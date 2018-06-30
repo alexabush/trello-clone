@@ -10,6 +10,7 @@ class Icon extends Component {
         <FontAwesomeIcon
           className={this.props.iconClass}
           icon={this.props.iconType}
+          size={this.props.size}
         />
       </div>
     );
