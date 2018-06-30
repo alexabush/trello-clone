@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import { ListItems } from '../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../components/Icon';
 
 class Card extends Component {
   state = {
-    isShowNewItemForm: true
+    isShowNewItemForm: true,
+    value: ''
+  };
+
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log('current state: ', this.state);
+    console.log('A name was submitted: ' + this.state.value);
+    debugger;
   };
 
   toggleShowNewItemForm = () => {
@@ -24,11 +37,26 @@ class Card extends Component {
 
   getNewItemForm = () => {
     return (
-      <form>
-        <textarea type="text" placeholder="Enter a new list item..." />
-        {/* <button onClick={this.toggleShowNewItemForm}>X</button> */}
-        <Icon iconType="window-close" />
-      </form>
+      <div>
+        <form id="newListItemForm" onSubmit={this.handleSubmit}>
+          <textarea
+            type="text"
+            className="textArea"
+            placeholder="Enter a new list item..."
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+        </form>
+        <button type="submit" form="newListItemForm" className="addCard">
+          Add Card
+        </button>
+        <Icon
+          iconType={faWindowClose}
+          iconClass="icon"
+          hasBackground="true"
+          onClick={this.toggleShowNewItemForm}
+        />
+      </div>
     );
   };
 

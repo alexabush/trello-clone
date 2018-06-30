@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
 class Icon extends Component {
   state = {};
   render() {
-    //should style as a boolean
     const hasBackground = this.props.hasBackground ? 'iconContainer' : '';
     return (
-      <div className={hasBackground}>
+      <div className={hasBackground} onClick={this.props.onClick}>
         <FontAwesomeIcon
           className={this.props.iconClass}
           icon={this.props.iconType}

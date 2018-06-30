@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   height: 100vh;
   width: 100vw;
@@ -129,23 +133,39 @@ ul p {
   border-radius: 5px;
 }
 
-::-webkit-input-placeholder {
+#newListInput::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: rgb(185, 211, 229);
 }
-::-moz-placeholder {
+#newListInput::-moz-placeholder {
   /* Firefox 19+ */
   color: rgb(185, 211, 229);
 }
-:-ms-input-placeholder {
+#newListInput:-ms-input-placeholder {
   /* IE 10+ */
   color: rgb(185, 211, 229);
 }
-:-moz-placeholder {
+#newListInput:-moz-placeholder {
   /* Firefox 18- */
   color: rgb(185, 211, 229);
 }
 
-#newListInput:focus {
+:focus {
   outline: none;
+}
+
+.textArea {
+  height: 75px;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.addCard {
+  background-color: rgb(76, 172, 76);
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
